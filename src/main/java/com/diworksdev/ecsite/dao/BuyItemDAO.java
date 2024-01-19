@@ -24,7 +24,7 @@ public class BuyItemDAO {
 			if(resultSet.next()) {
 				//DBから取得した情報をDTOクラスに格納
 				buyItemDTO.setId(resultSet.getInt("id"));
-				buyItemDTO.setItemName(resultSet.getString ("item _name"));
+				buyItemDTO.setItemName(resultSet.getString ("item_name"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
 			}
 		}catch (Exception e) {
