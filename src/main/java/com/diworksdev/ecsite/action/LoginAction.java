@@ -22,10 +22,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	
 	public String execute() {
 		String result = ERROR;
+		
+		//ユーザーが入力したIDとPWに基づくユーザー情報を取得しセッションに格納
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId,loginPassword);
 		session.put("loginUser",loginDTO);
 
-	  //入力値からユーザー情報の検索を行う
 	  //ログイン認証が成功した場合、次の画面で「商品情報」が必要な為商品情報を取得
 	  if(((LoginDTO)session.get("loginUser")).getLoginFlg()) {
 		

@@ -18,9 +18,11 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		
 		session.put("count", count);
 		
+		//取得した値を文字列に変換しInteger.で文字列から整数値に変換し、intCount 変数に格納
 		int intCount = Integer.parseInt(session.get("count").toString());
 		int intPrice = Integer.parseInt(session.get("buyItem_price").toString());
 		
+		//乗算した結果を total_price キーでセッションに保存
 		session.put("total_price", intCount * intPrice);
 		
 		String payment;
